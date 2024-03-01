@@ -25,9 +25,15 @@ output application/json
     
     {
     	 "name" : "ramesh",
-    	"comapny": "wipro"
+    	"company": "wipro"
     	
-    }
+    },
+      {
+         "name" : "satish",
+	 "company" : "Qbrainx"
+      }
+
+
        
 ]]]></ee:set-payload>
 			</ee:message>
