@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="application2Flow" doc:id="e7e250fd-40f4-4105-8e6d-0d81dc8c8843" >
+		<http:listener doc:name="Listener" doc:id="d391fd1f-2529-4d8e-93a3-332884bba3a2" config-ref="HTTP_Listener_config" path="/application2"/>
+		<ee:transform doc:name="Transform Message" doc:id="bd461fa3-3f8e-4116-abcc-7e12d0e402f8" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+[
+	{
+		"name" : "prakash",
+	  "company" : "qbrainx"
+    },
+    {
+    	 "name" :"suresh",
+    	 "company" : "Tcs"
+    	 
+    },
+    
+    {
+    	 "name" : "ramesh",
+    	"comapny": "wipro"
+    	
+    }
+       
+]]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
